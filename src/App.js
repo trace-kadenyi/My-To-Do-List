@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Header";
+import { useState } from 'react';
+import FormArea from "./FormArea";
+import List from "./List";
+import Footer from "./Footer";
 
 function App() {
-  return (
+  const [items, setItems] = useState([]);
+
+  
+  function addItem(item) {
+    setItems(prevItems => {
+      return [...prevItems, item]
+    })
+  }
+
+  function delItem(id) {
+    setItems((prevItems) => {
+      return prevItems.filter((item, index) => {
+        return index !== id;
+      })
+    })
+  }
+
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <FormArea 
+        addItem={addItem}
+      />
+      {items.map((item, index ) => (
+        <List 
+          id={index}
+          delItem={delItem}
+          activity={item.activity} 
+          date={item.date}
+          time={item.time}
+          
+        />
+      ))}
+      <Footer />
     </div>
   );
 }
