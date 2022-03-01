@@ -35,9 +35,10 @@ h1 {
 .list {
   display: inline-flex;
   min-width: 200px;
-  min-height: 100px;
-  padding: 10px;
-  margin: 20px;
+  min-height: 150px;
+  padding: 20px;
+  margin: 50px;
+  
 }
 
 
@@ -45,7 +46,7 @@ h1 {
   FormArea
 ************/
 .formArea {
-  margin: 10px 10%;
+  margin: 10px 10% 70px;
   padding: 25px 50px;
 }
 .formArea label {
@@ -56,10 +57,41 @@ h1 {
   Footer
 ************/
 .footer {
-  bottom: 0;
+  
   text-align: center;
   position: absolute;
   width: 100%;
+  height: 20px;
+  
+  
+  
+  
+  
 }
 
-
+/************
+  Timer
+************/
+.timer {
+  margin: 30px 30%;
+  padding: 10px 30px;
+  
+}
+@media screen and (min-width: 768px) {
+  .timer {
+    margin: 30px 35%;
+    padding: 10px 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .timer {
+    margin: 30px 40%;
+    padding: 10px 30px;
+  }
+  
+}
+.btn {
+  text-align: center;
+  margin: 20px auto;
+  display: flex;
+}

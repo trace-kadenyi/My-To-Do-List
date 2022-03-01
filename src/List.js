@@ -11,7 +11,7 @@ const List = ({ activity, date, time, id, delItem }) => {
 
   
   return (
-    <Paper className='list'>
+    <Paper className='list' elevation={10}>
         <div>
             <h2>{activity}</h2>
             <p>{date}</p>

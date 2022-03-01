@@ -3,6 +3,7 @@ import { useState } from 'react';
 import FormArea from "./FormArea";
 import List from "./List";
 import Footer from "./Footer";
+import Timer from "./Timer";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -25,6 +26,7 @@ function App() {
     return (
     <div className="App">
       <Header />
+      <Timer />
       <FormArea 
         addItem={addItem}
       />
