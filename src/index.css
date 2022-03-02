@@ -95,3 +95,8 @@ h1 {
   margin: 20px auto;
   display: flex;
 }
+.timer button {
+  width: 3rem;
+  height: 3rem;
+  
+}

@@ -3,29 +3,41 @@ import { Paper, TextField } from '@material-ui/core'
 
 
 const Timer = () => {
-    const [time, setTime] = useState({
-        Today: 'm/d/yyyy', 
-        Time: "0000hrs"
-    });
+    let theTime = new Date().toLocaleTimeString();
+    let theDate = new Date().toLocaleDateString();
 
-    // const theDay = () => {
-    //     let day = new Date().getDate();
-    //     let month = new Date().getMonth();
-    //     let year = new Date().getFullYear();
-    //     let thisDay = `${month} - ${day} - ${year} `
-    //     setTime(thisDay)
-    // }
-    // function theTime() {
-        
-    //     let hour = new Date().getHours();
-    //     let minute = new Date().getMinutes();
-        
-    //     let now = `${hour} : ${minute}`
+    const [date, setDate] = useState(" m/d/yyy")
+    const [time, setTime] = useState(" 00 : 00 ");
 
-    //     setTime(now)
-        
-        
-    // }
+    const clickHandler = () => {
+        const fa = document.querySelector('.far');
+        const btn = document.querySelector('.btn');
+
+        fa.addEventListener('click', () => {
+            if(btn.classList.contains('slash')) {
+                btn.classList.remove('slash')
+                setInterval(theDayTimeHandler, 1000)
+                fa.classList.add('fa-eye')
+                fa.classList.remove('fa-eye-slash')
+            } else {
+                btn.classList.add('slash')
+                setDate(' m/d/yyy ')
+                setTime(' 00 : 00 ')
+                fa.classList.remove('fa-eye')
+                fa.classList.add('fa-eye-slash')
+            }
+        })
+
+    }
+    
+    const theDayTimeHandler = () => {
+        theDate = new Date().toLocaleDateString();
+        setDate(theDate);              
+        theTime = new Date().toLocaleTimeString();
+        setTime(theTime);
+
+    };
+
 
     return (
         <Paper className='timer' elevation={10}>
@@ -37,20 +49,23 @@ const Timer = () => {
                     label='Today'
                     autoComplete='off'
                     fullWidth
-                    value={time.Today}
+                    value={date}
                     
                 />
                  <TextField
-                    style={{ marginTop: '5px' }}
+                    style={{ marginTop: '5px'}}
                     name='Time'
                     label='Time'
                     autoComplete='off'
                     fullWidth
-                    value={time.Time}
+                    value={time} 
+                    
                 />
             </form>
-            <button className='btn btn-secondary'>
-            <i class="far fa-eye-slash"></i>
+            <button className='btn btn-secondary' onClick={clickHandler}>
+            <i class="far fa-eye-slash"
+                style={{ margin: 'auto' }}
+            ></i>
             </button>
     
             
