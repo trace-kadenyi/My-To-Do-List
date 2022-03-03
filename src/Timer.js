@@ -10,21 +10,21 @@ const Timer = () => {
     const [time, setTime] = useState(" 00 : 00 ");
 
     const clickHandler = () => {
-        const fa = document.querySelector('.far');
+        const fa = document.querySelector('.fas');
         const btn = document.querySelector('.btn');
 
         fa.addEventListener('click', () => {
-            if(btn.classList.contains('slash')) {
-                btn.classList.remove('slash')
+            if(btn.classList.contains('off')) {
+                btn.classList.remove('off')
                 setInterval(theDayTimeHandler, 1000)
-                fa.classList.add('fa-eye')
-                fa.classList.remove('fa-eye-slash')
+                fa.classList.add('fa-toggle-on')
+                fa.classList.remove('fa-toggle-off')
             } else {
-                btn.classList.add('slash')
+                btn.classList.add('off')
                 setDate(' m/d/yyy ')
                 setTime(' 00 : 00 ')
-                fa.classList.remove('fa-eye')
-                fa.classList.add('fa-eye-slash')
+                fa.classList.remove('fa-toggle-on')
+                fa.classList.add('fa-toggle-off')
             }
         })
 
@@ -40,7 +40,7 @@ const Timer = () => {
 
 
     return (
-        <Paper className='timer' elevation={10}>
+        <Paper className='timer' elevation={10} style={{backgroundColor: 'aliceblue'}}>
             <h1>Timer</h1>
             <form>
                 <TextField
@@ -62,10 +62,11 @@ const Timer = () => {
                     
                 />
             </form>
-            <button className='btn btn-secondary' onClick={clickHandler}>
-            <i class="far fa-eye-slash"
-                style={{ margin: 'auto' }}
-            ></i>
+            <button className='btn btn-secondary' onDoubleClick={clickHandler}>
+                <i class="fas fa-toggle-off"
+                    style={{ margin: 'auto' }}
+                >                
+                </i>
             </button>
     
             

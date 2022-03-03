@@ -35,9 +35,9 @@ h1 {
 .list {
   display: inline-flex;
   min-width: 200px;
-  min-height: 150px;
+  min-height: 100px;
   padding: 20px;
-  margin: 50px;
+  margin: 30px;
   
 }
 
@@ -73,9 +73,10 @@ h1 {
   Timer
 ************/
 .timer {
-  margin: 30px 30%;
+  margin: 30px 25%;
   padding: 10px 30px;
   
+    
 }
 @media screen and (min-width: 768px) {
   .timer {
@@ -85,7 +86,7 @@ h1 {
 }
 @media screen and (min-width: 1200px) {
   .timer {
-    margin: 30px 40%;
+    margin: 30px 35%;
     padding: 10px 30px;
   }
   
@@ -99,4 +100,15 @@ h1 {
   width: 3rem;
   height: 3rem;
   
+}
+.timer h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-style: normal;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 4rem;
+  
+}
+.timer form {
+  background-color:#DBEEFF;
 }

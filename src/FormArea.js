@@ -43,20 +43,20 @@ const FormArea = ({ addItem }) => {
                     
                 />
                 <TextField 
-                    style={{ marginTop: '10px' }}
+                    style={{ marginTop: '20px' }}
                     onChange={changeHandler}
                     name='date'
+                    type='date'
                     value={item.date}
-                    label='Date'
                     fullWidth
                     autoComplete="off"
                 />
                 <TextField 
-                    style={{ marginTop: '10px' }}
+                    style={{ marginTop: '20px' }}
                     onChange={changeHandler}
                     name='time'
+                    type='time'
                     value={item.time}
-                    label='Time'
                     fullWidth
                     autoComplete="off"
                 />
