@@ -23,6 +23,11 @@ function App() {
     })
   }
 
+  const handleCheck = (id) => {
+    items.map((item) => item.id === id ? {...item, checked: !item.checked } : item)
+    
+  }
+
     return (
     <div className="App">
       <Header />
@@ -37,6 +42,7 @@ function App() {
           activity={item.activity} 
           date={item.date}
           time={item.time}
+          handleCheck={handleCheck}
           
         />
       ))}
