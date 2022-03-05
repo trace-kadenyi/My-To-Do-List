@@ -6,8 +6,8 @@ const Timer = () => {
     let theTime = new Date().toLocaleTimeString();
     let theDate = new Date().toLocaleDateString();
 
-    const [date, setDate] = useState(" m/d/yyy")
-    const [time, setTime] = useState(" 00 : 00 ");
+    const [date, setDate] = useState(" mm/dd/yyyy")
+    const [time, setTime] = useState(" 00 : 00 : 00");
 
     const clickHandler = () => {
         const fa = document.querySelector('.fas');
@@ -21,8 +21,8 @@ const Timer = () => {
                 fa.classList.remove('fa-toggle-off')
             } else {
                 btn.classList.add('off')
-                setDate(' m/d/yyy ')
-                setTime(' 00 : 00 ')
+                setDate(' mm/dd/yyyy ')
+                setTime(' 00 : 00 : 00 ')
                 fa.classList.remove('fa-toggle-on')
                 fa.classList.add('fa-toggle-off')
             }
@@ -44,7 +44,7 @@ const Timer = () => {
             <h1>Timer</h1>
             <form>
                 <TextField
-                    style={{ marginTop: '5px' }}
+                    style={{ marginTop: '5px', padding: "5px" }}
                     name='Today'
                     label='Today'
                     autoComplete='off'
@@ -53,7 +53,7 @@ const Timer = () => {
                     
                 />
                  <TextField
-                    style={{ marginTop: '5px'}}
+                    style={{ marginTop: '5px', padding: '5px'}}
                     name='Time'
                     label='Time'
                     autoComplete='off'

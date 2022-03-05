@@ -19,7 +19,7 @@ const List = ({ activity, date, time, id, delItem, handleCheck }) => {
 
             />
             <label>
-              <h3>{activity}</h3>
+              <h4>{activity}</h4>
               <p>{date}</p>
               <p>{time}</p>
             </label>

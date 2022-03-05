@@ -35,7 +35,7 @@ function App() {
       <FormArea 
         addItem={addItem}
       />
-      {items.map((item, index ) => (
+      {items.length ? (items.map((item, index ) => (
         <List 
           id={index}
           delItem={delItem}
@@ -45,7 +45,7 @@ function App() {
           handleCheck={handleCheck}
           
         />
-      ))}
+      ))) : (<p className="noActs">Your List is Empty!!!</p>)}
       <Footer />
     </div>
   );

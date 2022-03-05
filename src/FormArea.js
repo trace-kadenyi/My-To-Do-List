@@ -10,13 +10,24 @@ const FormArea = ({ addItem }) => {
     });
 
     const clickHandler = () => {
-        addItem(item);
-        setItem({
-            activity: '', 
-            date: '', 
-            time: ''
-        })
-    }
+        if(!item.activity){
+            alert("Please fill in the Activity");
+        } else if(!item.date) {
+            alert("Please fill in the Date");
+        } else if(!item.time) {            
+            alert("Please fill in the Time");
+            
+        } else {
+                addItem(item);
+                setItem({
+                    activity: '', 
+                    date: '', 
+                    time: ''
+                });
+            } 
+        }
+    
+        
 
     function changeHandler(e) {
         const {name, value} = e.target
@@ -40,6 +51,7 @@ const FormArea = ({ addItem }) => {
                     label='Activity'
                     fullWidth
                     autoComplete="off"
+                    required
                     
                 />
                 <TextField 
@@ -50,6 +62,7 @@ const FormArea = ({ addItem }) => {
                     value={item.date}
                     fullWidth
                     autoComplete="off"
+                    required
                 />
                 <TextField 
                     style={{ marginTop: '20px' }}
@@ -59,6 +72,7 @@ const FormArea = ({ addItem }) => {
                     value={item.time}
                     fullWidth
                     autoComplete="off"
+                    required
                 />
                 <Fab
                     style={{ marginTop: '20px' }}
