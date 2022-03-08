@@ -6,7 +6,20 @@ import Footer from "./Footer";
 import Timer from "./Timer";
 
 function App() {
+  let theTime = new Date().toLocaleTimeString();
+  let theDate = new Date().toLocaleDateString();
+
   const [items, setItems] = useState([]);
+  const [date, setDate] = useState(" mm/dd/yyyy")
+  const [time, setTime] = useState(" 00 : 00 : 00");
+
+  const theDayTimeHandler = () => {
+    theDate = new Date().toLocaleDateString();
+    setDate(theDate);              
+    theTime = new Date().toLocaleTimeString();
+    setTime(theTime);
+
+};
 
   
   function addItem(item) {
@@ -31,7 +44,13 @@ function App() {
     return (
     <div className="App">
       <Header />
-      <Timer />
+      <Timer 
+        date={date}
+        time={time}
+        setDate={setDate}
+        setTime={setTime}
+        theDayTimeHandler={theDayTimeHandler}
+      />
       <FormArea 
         addItem={addItem}
       />
@@ -43,6 +62,7 @@ function App() {
           date={item.date}
           time={item.time}
           handleCheck={handleCheck}
+          
           
         />
       ))) : (<p className="noActs">Your List is Empty!!!</p>)}

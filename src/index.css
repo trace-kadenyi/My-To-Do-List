@@ -54,12 +54,15 @@ h1 {
   margin-right: 15px;
   
 }
+.list label {
+  color: forestgreen;
+}
 .list input[type='checkbox']:focus + label {
   text-decoration: underline;
 }
 
 .list svg {
-  color: rgb(139,0,0);
+  color: gray;
 }
 .list svg:focus,
 .list svg:hover {
@@ -73,6 +76,7 @@ h1 {
 }
 .list input[type='checkbox']:checked + label {
   text-decoration: line-through;
+  color: blue;
 }
 .list label {
   font-family: monospace;

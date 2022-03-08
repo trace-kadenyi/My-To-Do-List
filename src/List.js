@@ -27,6 +27,7 @@ const List = ({ activity, date, time, id, delItem, handleCheck }) => {
         <Button 
           style={{ marginLeft: "120px" }}
           onClick={clickHandler}
+          
         >
           <DeleteIcon/>
         </Button>

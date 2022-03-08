@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Paper, TextField } from '@material-ui/core'
 
 
-const Timer = () => {
-    let theTime = new Date().toLocaleTimeString();
-    let theDate = new Date().toLocaleDateString();
+const Timer = ({ date, time, setDate, setTime, theDayTimeHandler }) => {
+    // let theTime = new Date().toLocaleTimeString();
+    // let theDate = new Date().toLocaleDateString();
 
-    const [date, setDate] = useState(" mm/dd/yyyy")
-    const [time, setTime] = useState(" 00 : 00 : 00");
+    // const [date, setDate] = useState(" mm/dd/yyyy")
+    // const [time, setTime] = useState(" 00 : 00 : 00");
 
     const clickHandler = () => {
         const fa = document.querySelector('.fas');
@@ -30,13 +30,13 @@ const Timer = () => {
 
     }
     
-    const theDayTimeHandler = () => {
-        theDate = new Date().toLocaleDateString();
-        setDate(theDate);              
-        theTime = new Date().toLocaleTimeString();
-        setTime(theTime);
+    // const theDayTimeHandler = () => {
+    //     theDate = new Date().toLocaleDateString();
+    //     setDate(theDate);              
+    //     theTime = new Date().toLocaleTimeString();
+    //     setTime(theTime);
 
-    };
+    // };
 
 
     return (
