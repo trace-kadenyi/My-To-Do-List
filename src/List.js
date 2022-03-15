@@ -3,7 +3,7 @@ import React from 'react';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 
-const List = ({ activity, date, time, id, delItem, handleCheck }) => {
+const List = ({ activity, date, time, id, item, delItem, handleCheck }) => {
 
   const clickHandler = () => {
     delItem(id)
@@ -16,6 +16,7 @@ const List = ({ activity, date, time, id, delItem, handleCheck }) => {
             <input
               type='checkbox'
               onChange={() => handleCheck(id)}
+              checked={item.checked}
               
 
             />
@@ -23,6 +24,7 @@ const List = ({ activity, date, time, id, delItem, handleCheck }) => {
               <h4>{activity}</h4>
               <p>{date}</p>
               <p>{time}</p>
+              
             </label>
         </div>
         <Button 

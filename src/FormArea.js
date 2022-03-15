@@ -1,13 +1,9 @@
 import { Fab, Paper, TextField } from "@material-ui/core";
-import React, { useState } from "react";
+import React from "react";
 import AddIcon from '@material-ui/icons/Add';
 
-const FormArea = ({ addItem }) => {
-    const [item, setItem] = useState({
-        activity: '', 
-        date: '', 
-        time: ''
-    });
+const FormArea = ({ addItem, item, setItem }) => {
+    
 
     const clickHandler = () => {
         if(!item.activity){

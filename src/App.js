@@ -13,18 +13,20 @@ function App() {
   const [date, setDate] = useState(" mm/dd/yyyy")
   const [time, setTime] = useState(" 00 : 00 : 00");
 
+  const [item, setItem] = useState({
+    activity: '', 
+    date: '', 
+    time: '',
+    
 
+});
   const theDayTimeHandler = () => {
     theDate = new Date().toLocaleDateString();
     setDate(theDate);              
     theTime = new Date().toLocaleTimeString();
     setTime(theTime);
 
-};
-
-  
-
-
+}; 
 
   function addItem(item) {
     (setItems(prevItems => {
@@ -33,57 +35,22 @@ function App() {
       return [...prevItems, item]
     }))
     const listItems = items.concat(item)
-    localStorage.setItem('todolist', JSON.stringify(listItems))
-    console.log(listItems)
-    // console.log(items.concat(item))
-    // console.log(item)
-    
-    
+    localStorage.setItem('todolist', JSON.stringify(listItems))   
   }
-
-
-
-
-
-
-
-  
-/****************
- * *******************
- * ************************
- * *****************************
- * *********/
-
-  
-
 
   const delItem = (id) => {
     const listItems = items.filter((item, index) => id !== index);
     setItems(listItems);
-    localStorage.setItem('todolist', JSON.stringify(listItems))
-    console.log(listItems)
-    
-    
+    localStorage.setItem('todolist', JSON.stringify(listItems))    
   }
-
-  
 
   const handleCheck = (id, item) => {
     const listItems = items.map((item, index) => id === index ? {...item, checked: !item.checked } : item)
     setItems(listItems)
     localStorage.setItem('todolist', JSON.stringify(listItems))
-    console.log(listItems)
     
   }
 
-
-  // const handleCheck = (id) => {
-  //   const listItems = items.map((item, index) => id === index ? {...item, checked: !item.checked } : item)
-  //   setItems(listItems)
-  //   localStorage.setItem('todolist', JSON.stringify(listItems))
-  //   console.log(listItems)
-    
-  // }
   
     return (
     <div className="App">
@@ -97,6 +64,8 @@ function App() {
       />
       <FormArea 
         addItem={addItem}
+        item={item}
+        setItem={setItem}
       />
       {items.length ? (items.map((item, index ) => (
         <List 
@@ -107,6 +76,8 @@ function App() {
           date={item.date}
           time={item.time}
           handleCheck={handleCheck}
+          checked={item.checked}
+          item={item}
           
           
         />
