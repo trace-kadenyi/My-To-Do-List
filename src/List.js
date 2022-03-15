@@ -16,6 +16,7 @@ const List = ({ activity, date, time, id, delItem, handleCheck }) => {
             <input
               type='checkbox'
               onChange={() => handleCheck(id)}
+              
 
             />
             <label>
