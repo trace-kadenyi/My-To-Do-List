@@ -12,7 +12,7 @@ function App() {
   const [items, setItems] = useState(JSON.parse(localStorage.getItem('todolist')));
   const [date, setDate] = useState(" mm/dd/yyyy")
   const [time, setTime] = useState(" 00 : 00 : 00");
-
+  const [day, setDay] = useState('Today');
   const [item, setItem] = useState({
     activity: '', 
     date: '', 
@@ -21,10 +21,16 @@ function App() {
 
 });
   const theDayTimeHandler = () => {
+    //date
     theDate = new Date().toLocaleDateString();
     setDate(theDate);              
+    //time
     theTime = new Date().toLocaleTimeString();
     setTime(theTime);
+    //day
+    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    let day = weekday[new Date().getDay()];
+    setDay(day)
 
 }; 
 
@@ -58,6 +64,8 @@ function App() {
       <Timer 
         date={date}
         time={time}
+        day={day}
+        setDay={setDay}
         setDate={setDate}
         setTime={setTime}
         theDayTimeHandler={theDayTimeHandler}

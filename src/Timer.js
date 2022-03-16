@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 import { Paper, TextField } from '@material-ui/core'
 
 
-const Timer = ({ date, time, setDate, setTime, theDayTimeHandler }) => {
+const Timer = ({ date, time, day, setDay, setDate, setTime, theDayTimeHandler }) => {
     // let theTime = new Date().toLocaleTimeString();
     // let theDate = new Date().toLocaleDateString();
 
@@ -43,6 +42,15 @@ const Timer = ({ date, time, setDate, setTime, theDayTimeHandler }) => {
         <Paper className='timer' elevation={10} style={{backgroundColor: 'aliceblue'}}>
             <h1>Timer</h1>
             <form>
+                <TextField
+                            style={{ marginTop: '5px', padding: '5px'}}
+                            name='Day'
+                            label='Day'
+                            autoComplete='off'
+                            fullWidth
+                            value={day} 
+                        
+                    />
                 <TextField
                     style={{ marginTop: '5px', padding: "5px" }}
                     name='Today'
