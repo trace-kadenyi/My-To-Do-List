@@ -40,7 +40,7 @@ const Timer = ({ date, time, day, setDay, setDate, setTime, theDayTimeHandler })
 
     return (
         <Paper className='timer' elevation={10} style={{backgroundColor: 'aliceblue'}}>
-            <h1>Timer</h1>
+            <h1>Clock</h1>
             <form>
                 <TextField
                             style={{ marginTop: '5px', padding: '5px'}}

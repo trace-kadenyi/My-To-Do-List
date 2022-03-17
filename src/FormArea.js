@@ -37,7 +37,7 @@ const FormArea = ({ addItem, item, setItem }) => {
     
 
     return  (
-        <Paper className="formArea">
+        <Paper className="formArea" style={{backgroundColor: "aliceblue"}}>
             <form>
                 <TextField 
                     style={{ marginTop: '10px' }}
