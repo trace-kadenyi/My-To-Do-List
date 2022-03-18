@@ -2,12 +2,7 @@ import { Paper, TextField } from '@material-ui/core'
 
 
 const Timer = ({ date, time, day, setDay, setDate, setTime, theDayTimeHandler }) => {
-    // let theTime = new Date().toLocaleTimeString();
-    // let theDate = new Date().toLocaleDateString();
-
-    // const [date, setDate] = useState(" mm/dd/yyyy")
-    // const [time, setTime] = useState(" 00 : 00 : 00");
-
+    
     const clickHandler = () => {
         const fa = document.querySelector('.fas');
         const btn = document.querySelector('.btn');
@@ -29,26 +24,17 @@ const Timer = ({ date, time, day, setDay, setDate, setTime, theDayTimeHandler })
 
     }
     
-    // const theDayTimeHandler = () => {
-    //     theDate = new Date().toLocaleDateString();
-    //     setDate(theDate);              
-    //     theTime = new Date().toLocaleTimeString();
-    //     setTime(theTime);
-
-    // };
-
-
     return (
-        <Paper className='timer' elevation={10} style={{backgroundColor: 'aliceblue'}}>
+        <Paper className='timer' elevation={10} style={{backgroundColor: '#F0E68C'}}>
             <h1>Clock</h1>
             <form>
                 <TextField
-                            style={{ marginTop: '5px', padding: '5px'}}
-                            name='Day'
-                            label='Day'
-                            autoComplete='off'
-                            fullWidth
-                            value={day} 
+                    style={{ marginTop: '5px', padding: '5px'}}
+                    name='Day'
+                    label='Day'
+                    autoComplete='off'
+                    fullWidth
+                    value={day} 
                         
                     />
                 <TextField

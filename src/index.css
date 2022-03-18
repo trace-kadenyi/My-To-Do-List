@@ -9,9 +9,10 @@
 ************/
 .noActs {
   text-align: center;
-  margin: 120px auto;
+  margin: 150px auto;
   font-size: 2rem;
   color: white;
+  font-weight: bold;
   
 }
 body {
@@ -48,6 +49,7 @@ h1 {
 .list {
   display: inline-flex;
   min-width: 200px;
+  max-width: 600px;
   min-height: 100px;
   padding: 20px;
   margin: 30px;
@@ -142,7 +144,6 @@ h1 {
 }
 .footer p {
   letter-spacing: 0.25rem;
-  font-weight: bold;
   color: white;
   
 }
@@ -196,5 +197,5 @@ h1 {
   
 }
 .timer form {
-  background-color:#DBEEFF;
+  background-color:white;
 }

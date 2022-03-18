@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <Paper className="footer">
             <p 
-                style={{ backgroundColor: "gray" }}
+                style={{ backgroundColor: "black" }}
             >
                 Copyright &copy; Kadenyi { new Date().getFullYear() }
 

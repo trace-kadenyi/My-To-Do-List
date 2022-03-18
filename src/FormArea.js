@@ -21,8 +21,7 @@ const FormArea = ({ addItem, item, setItem }) => {
                     time: ''
                 });
             } 
-        }
-    
+        }    
         
 
     function changeHandler(e) {
@@ -37,7 +36,7 @@ const FormArea = ({ addItem, item, setItem }) => {
     
 
     return  (
-        <Paper className="formArea" style={{backgroundColor: "aliceblue"}}>
+        <Paper className="formArea" style={{backgroundColor: "#F0E68C"}}>
             <form>
                 <TextField 
                     style={{ marginTop: '10px' }}
