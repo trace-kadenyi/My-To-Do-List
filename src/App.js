@@ -1,5 +1,5 @@
 import Header from "./Header";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import FormArea from "./FormArea";
 import List from "./List";
 import Footer from "./Footer";
@@ -9,10 +9,7 @@ function App() {
   let theTime = new Date().toLocaleTimeString();
   let theDate = new Date().toLocaleDateString();
 
-  const [items, setItems] = useState(() => {
-    const localData = localStorage.getItem('todolist');
-    return localData ? JSON.parse(localData) : [];
-  });
+  const [items, setItems] = useState([]);
   const [date, setDate] = useState(" mm/dd/yyyy")
   const [time, setTime] = useState(" 00 : 00 : 00");
   const [day, setDay] = useState('Today');
@@ -20,9 +17,15 @@ function App() {
     activity: '', 
     date: '', 
     time: '',
-    
+  
+  });
 
-});
+  useEffect(() => {
+    setItems(JSON.parse(localStorage.getItem('todolist')))
+  }, [])
+
+  
+
   const theDayTimeHandler = () => {
     //date
     theDate = new Date().toLocaleDateString();
