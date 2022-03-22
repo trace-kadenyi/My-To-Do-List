@@ -9,7 +9,7 @@ function App() {
   let theTime = new Date().toLocaleTimeString();
   let theDate = new Date().toLocaleDateString();
 
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem('todolist')) || []);
   const [date, setDate] = useState(" mm/dd/yyyy")
   const [time, setTime] = useState(" 00 : 00 : 00");
   const [day, setDay] = useState('Today');
@@ -20,9 +20,9 @@ function App() {
   
   });
 
-  // useEffect(() => {
-  //   setItems(JSON.parse(localStorage.getItem('todolist')))
-  // }, [])
+  useEffect(() => {
+    localStorage.setItem('todolist', JSON.stringify(items))
+  }, [items])
 
   
 
@@ -47,24 +47,25 @@ function App() {
       return [...prevItems, item]
     }))
     const listItems = items.concat(item)
-    localStorage.setItem('todolist', JSON.stringify(listItems))   
-    console.log(JSON.parse(localStorage.getItem('todolist')))   
+    setItems(listItems)
+    // localStorage.setItem('todolist', JSON.stringify(listItems))   
+    // console.log(JSON.parse(localStorage.getItem('todolist')))   
 
   }
 
   const delItem = (id) => {
     const listItems = items.filter((item, index) => id !== index);
     setItems(listItems);
-    localStorage.setItem('todolist', JSON.stringify(listItems)) 
-    console.log(JSON.parse(localStorage.getItem('todolist')))   
+    // localStorage.setItem('todolist', JSON.stringify(listItems)) 
+    // console.log(JSON.parse(localStorage.getItem('todolist')))   
    
   }
 
   const handleCheck = (id, item) => {
     const listItems = items.map((item, index) => id === index ? {...item, checked: !item.checked } : item)
     setItems(listItems)
-    localStorage.setItem('todolist', JSON.stringify(listItems))
-    console.log(JSON.parse(localStorage.getItem('todolist')))   
+    // localStorage.setItem('todolist', JSON.stringify(listItems))
+    // console.log(JSON.parse(localStorage.getItem('todolist')))   
 
     
   }
