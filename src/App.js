@@ -20,9 +20,9 @@ function App() {
   
   });
 
-  useEffect(() => {
-    setItems(JSON.parse(localStorage.getItem('todolist')))
-  }, [])
+  // useEffect(() => {
+  //   setItems(JSON.parse(localStorage.getItem('todolist')))
+  // }, [])
 
   
 
