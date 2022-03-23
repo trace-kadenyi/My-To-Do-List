@@ -1,7 +1,7 @@
 import { Paper, TextField } from '@material-ui/core'
 
 
-const Timer = ({ date, time, day, setDay, setDate, setTime, theDayTimeHandler }) => {
+const Timer = ({ date, time, day, setDate, setTime, theDayTimeHandler }) => {
     
     const clickHandler = () => {
         const fa = document.querySelector('.fas');
@@ -39,8 +39,8 @@ const Timer = ({ date, time, day, setDay, setDate, setTime, theDayTimeHandler })
                     />
                 <TextField
                     style={{ marginTop: '5px', padding: "5px" }}
-                    name='Today'
-                    label='Today'
+                    name='Date'
+                    label='Date'
                     autoComplete='off'
                     fullWidth
                     value={date}

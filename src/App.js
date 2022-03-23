@@ -39,7 +39,7 @@ function App() {
     setDay(day)
 
 }; 
-
+// add item to the list
   function addItem(item) {
     (setItems(prevItems => {
       item.id = Math.floor(Math.random() * 10000)
@@ -48,25 +48,20 @@ function App() {
     }))
     const listItems = items.concat(item)
     setItems(listItems)
-    // localStorage.setItem('todolist', JSON.stringify(listItems))   
-    // console.log(JSON.parse(localStorage.getItem('todolist')))   
-
+      
   }
 
+//delete item from the list
   const delItem = (id) => {
     const listItems = items.filter((item, index) => id !== index);
     setItems(listItems);
-    // localStorage.setItem('todolist', JSON.stringify(listItems)) 
-    // console.log(JSON.parse(localStorage.getItem('todolist')))   
-   
+       
   }
 
+  //check items on the list
   const handleCheck = (id, item) => {
     const listItems = items.map((item, index) => id === index ? {...item, checked: !item.checked } : item)
     setItems(listItems)
-    // localStorage.setItem('todolist', JSON.stringify(listItems))
-    // console.log(JSON.parse(localStorage.getItem('todolist')))   
-
     
   }
 

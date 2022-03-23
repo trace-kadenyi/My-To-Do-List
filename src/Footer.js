@@ -7,9 +7,7 @@ const Footer = () => {
             <p 
                 style={{ backgroundColor: "black" }}
             >
-                Copyright &copy; Kadenyi { new Date().getFullYear() }
-
-                {/* Copyright &copy; <span><a href="https://www.w3schools.com/css/css_link.asp" rel="noreferrer" target="_blank">Kadenyi</a></span> { new Date().getFullYear() } */}
+                Copyright &copy; <span><a href="https://github.com/TracK92" rel="noreferrer" target="_blank">Kadenyi</a></span> { new Date().getFullYear() }
             </p>
         </Paper>
     );

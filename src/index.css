@@ -150,9 +150,12 @@ h1 {
 .footer a {
   text-decoration: none;
   color: white;
+
 }
 .footer a:hover {
-  color: black;
+  color: "#F0E68C";
+  font-weight: bold;
+  
 }
 
 
