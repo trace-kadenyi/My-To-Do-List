@@ -166,7 +166,6 @@ h1 {
   margin: 30px 25%;
   padding: 10px 30px;
    
-    
 }
 @media screen and (min-width: 768px) {
   .timer {
@@ -196,7 +195,7 @@ h1 {
   font-style: normal;
   text-align: center;
   font-weight: bolder;
-  font-size: 4rem;
+  font-size: 3rem;
   
 }
 .timer form {
