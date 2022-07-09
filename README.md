@@ -10,7 +10,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://track92.github.io/My-To-Do-List/)
+[Live Demo Link](https://track92.github.io/React-To-Do-List/)
 
 
 ## Author
