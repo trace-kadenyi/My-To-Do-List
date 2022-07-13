@@ -5,7 +5,7 @@
 
 ## Built With
 
-- Major languages: HTML|CSS| JavaScript
+- Major languages: HTML|CSS| Reactjs
 - Frameworks: Reactjs
 
 ## Live Demo
