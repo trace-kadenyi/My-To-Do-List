@@ -135,7 +135,6 @@ h1 {
   Footer
 ************/
 .footer {
-  
   text-align: center;
   position: absolute;
   width: 100%;
@@ -155,7 +154,6 @@ h1 {
 .footer a:hover {
   color: "#F0E68C";
   font-weight: bold;
-  
 }
 
 
@@ -165,8 +163,8 @@ h1 {
 .timer {
   margin: 30px 25%;
   padding: 10px 30px;
-   
 }
+
 @media screen and (min-width: 768px) {
   .timer {
     margin: 30px 35%;

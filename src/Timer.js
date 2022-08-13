@@ -1,33 +1,19 @@
-import { Paper, TextField } from '@material-ui/core'
+import { Paper, TextField } from '@material-ui/core';
+import { useEffect } from 'react';
+import { FaClock } from 'react-icons/fa';
 
 
-const Timer = ({ date, time, day, setDate, setTime, theDayTimeHandler }) => {
-    
-    const clickHandler = () => {
-        const fa = document.querySelector('.fas');
-        const btn = document.querySelector('.btn');
+const Timer = ({ date, time, day, theDayTimeHandler }) => {
 
-        fa.addEventListener('click', () => {
-            if(btn.classList.contains('off')) {
-                btn.classList.remove('off')
-                setInterval(theDayTimeHandler, 1000)
-                fa.classList.add('fa-toggle-on')
-                fa.classList.remove('fa-toggle-off')
-            } else {
-                btn.classList.add('off')
-                setDate(' mm/dd/yyyy ')
-                setTime(' 00 : 00 : 00 ')
-                fa.classList.remove('fa-toggle-on')
-                fa.classList.add('fa-toggle-off')
-            }
-        })
-
-    }
+    useEffect(() => {
+        setInterval(theDayTimeHandler, 1000)
+    });
+        
     
     return (
         <Paper className='timer' elevation={10} style={{backgroundColor: '#F0E68C'}}>
-            <h1>Clock</h1>
-            <form>
+            <h1 className='clock'>Clock</h1><FaClock style={{ display: "flex", alignItems: "center", margin: "0 auto 10px", justifyContent: "center" }} />
+            <form style={{ marginBottom: "20px" }}>
                 <TextField
                     style={{ marginTop: '5px', padding: '5px'}}
                     name='Day'
@@ -56,14 +42,6 @@ const Timer = ({ date, time, day, setDate, setTime, theDayTimeHandler }) => {
                     
                 />
             </form>
-            <button className='btn btn-secondary' onDoubleClick={clickHandler}>
-                <i class="fas fa-toggle-off"
-                    style={{ margin: 'auto' }}
-                >                
-                </i>
-            </button>
-    
-            
         </Paper>
     );
 };
